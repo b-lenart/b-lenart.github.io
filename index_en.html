@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B.L. Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Playfair+Display|Quicksand|Raleway|Shadows+Into+Light&amp;subset=latin-ext" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Portfolio Front End Developer - Bartosz Lenart">
+    
+<!--    <link rel="shortcut icon" href="Drawing%20(1).png"/>-->
+    <link rel="icon" type="image/png" href="images/resizedimage.png" />
+<!--    <link rel="shortcut icon" href="play.png"/>-->
+    <link rel="stylesheet" href="stylebl.css">
+</head>
+<body>
+  <div class="menu-button"><i class="fas fa-bars"></i></div>
+  <div class="mobile-menu">
+       <ul>
+           <div class="mobile-href" onclick="scrollInsB()"><li>Home</li></div>
+           <div class="mobile-href" onclick="scrollIns('aboutme')"><li>About Me</li></div>
+           <div class="mobile-href" onclick="scrollIns('projects')"><li>Projects</li></div>
+           <div class="mobile-href" onclick="scrollIns('technologies')"><li>Technologies</li></div>
+           <div class="mobile-href" onclick="scrollIns('contact')"><li>Contact</li></div>
+       </ul>
+       <div class="scroll-to-close">scroll to close<div class="menu-down">
+           <i class="fas fa-chevron-down"></i>
+       </div>
+       </div>
+   </div>
+   
+<!--    <div id="container">-->
+       
+<!--        <div id="whitebox">-->
+          
+          <div class="right-nav">
+              <div class="r-navs" data-title="Home">
+                  <i class="fas fa-home r-navs2" id="right-nav-1" onclick="scrollInsA()"></i>
+              </div>
+              <div class="r-navs" data-title="O mnie">
+                  <i class="far fa-user-circle r-navs2" id="right-nav-2" onclick="scrollIns('aboutme')"></i>
+              </div>
+              <div class="r-navs" data-title="Projekty">
+                  <i class="far fa-images r-navs2" id="right-nav-3" onclick="scrollIns('projects')"></i>
+              </div>
+              <div class="r-navs" data-title="Technologie">
+                  <i class="fas fa-laptop r-navs2" id="right-nav-4" onclick="scrollIns('technologies')"></i>
+              </div>
+              <div class="r-navs" data-title="Kontakt">
+                  <i class="far fa-envelope r-navs2" id="right-nav-5" onclick="scrollIns('contact')"></i>
+              </div>
+          </div>
+          
+          <div class="languages">
+<!--             <i class="fas fa-caret-right open-lang"></i>-->
+              <a href="index_en.html"><div class="lang" id="lang1" data-title="English">
+                      <img src="images/eng.png" alt="languages">
+                  </div></a>
+                  
+              <a href="index.html"><div class="lang" id="lang2" data-title="Polski">
+                      <img src="images/pol.png" alt="languages">
+                  </div></a>
+          </div>
+          
+           <div id="desc">
+           <nav>
+               <ul>
+                   <li onclick="scrollIns('aboutme')">About Me
+                    <div class="box">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                   </li>
+                   
+                   <li onclick="scrollIns('projects')">Projects
+                   <div class="box">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                   </li>
+                   
+                   <li onclick="scrollIns('technologies')">Technologies
+                    <div class="box">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                   </li>
+                   
+                   <li onclick="scrollIns('contact')">Contact
+                    <div class="box">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                   </li>
+               </ul>
+           </nav>
+           <div id="title"><a href="index_en.html">B.L. Portfolio</a></div>
+           <div style="clear:both;"></div>
+           
+<!--           <div id="desc">-->
+             <img class="triangle-img" src="images/triangle0.png" alt="polygonal triangle">
+              <div class="name namebl">
+                  <h2>Bartosz Lenart</h2>
+<!--                  <h2>Bartosz Lenart</h2>-->
+                  <h5>Front End Developer's Portfolio</h5>
+              </div>
+              <div id="circle"></div>
+<!--zawartość name i circle powinny być wyśrodkowane, zapakować circle w diva, USUNĄĆ CIRCLE I NIEPOTRZEBNE DIVY-->
+           </div>
+           
+           <div id="aboutme">
+<!--             <i class="fas fa-code code"></i>-->
+             
+              <div class="title2">About Me</div>
+              <div class="about-content">
+               <div class="desc-text">I'm studying Computer Science and Econometrics at Higher School of Economics and Computer Science in Cracow<br><br>For creating websites, I use technologies such as HTML5, CSS3, JavaScript, jQuery, Bootstrap or Sass<br><br>I can make good looking, user-friendly, responsive webpages. I finished 3-month internship as a Web Developer at one of the Cracow's digital agencies in June.<br><br>It would be a pleasure to work with interesting and ambitious people, who can help me developing my skills</div>
+               
+               <div class="img-container">
+                   <img src="images/me.jpg" alt="zdjęcie bartosz lenart">
+                   <img src="images/signature2.png" alt="signature" class="signature">
+               </div>
+               
+              </div>
+           </div>
+           
+           <div id="projects">
+              <i class="fas fa-chevron-left left" onclick="goLeft()"></i>
+              <i class="fas fa-chevron-right right" onclick="goRight()"></i>
+                   
+               <div class="titles title3">Projects</div>
+               <div class="slider">
+                   <div class="long-slide">
+                       <div class="slide newera-slide"><a href="newera_en.html"></a></div>
+                       <div class="slide idea-slide"><a href="idea_en.html"></a></div>
+                       <div class="slide arch-slide"><a href="zapl_en.html"></a></div>
+                       <div class="slide lkk-slide"><a href="lkk_en.html"></a></div>
+                   </div>
+               </div>
+           </div>
+           <div id="technologies">
+              <div class="tech-title">Technologies I worked with:</div>
+               <div class="tech" data-tech="html5"><i class="fab fa-html5"></i></div>
+               <div class="tech" data-tech="css3"><i class="fab fa-css3-alt"></i></div>
+               <div class="tech" data-tech="javascript"><i class="fab fa-js-square"></i></div>
+               <div class="tech" data-tech="responsive web design"><i class="fas fa-mobile-alt"></i></div>
+               <div class="tech" data-tech="jquery"><img src="images/icons8-jquery-filled-50.png" class="jquery-icon" alt="jquery"></div>
+               <div class="tech" data-tech="git"><i class="fab fa-git"></i></div>
+               <div class="tech" data-tech="sass"><i class="fab fa-sass"></i></div>
+               <div class="tech" data-tech="wordpress"><i class="fab fa-wordpress-simple"></i></div>
+               <div class="tech" data-tech="bootstrap"><img class="bootstrap-icon" src="images/bootstrap-solid.svg"></div>
+               <div class="tech" data-tech="sql"><i class="fas fa-database"></i></div>
+<!--              <div class="tech-description"></div>-->
+           </div>
+           <div id="contact">
+               <div class="titles title2">Contact</div>
+               <div class="contact-info">
+<!--                 <img class="corner" src="corner2.png">-->
+                  <h3>E-mail:</h3>
+                   <h2><!--<i class="far fa-envelope"></i>--> bart9513@gmail.com</h2>
+                  <h3>Phone:</h3>   
+                   <h2><i class="fas fa-mobile-alt"></i>&nbsp; +48 503 697 036</h2>
+               </div>
+               <div class="contact-form">
+                   <!--action="https://formspree.io/bartek9513@interia.pl"-->
+                    <form action="https://formspree.io/bartek9513@interia.pl" method="POST">
+                        <input name="name" type="text" class="input1" placeholder="Your name" required autocomplete="off">
+                        <br>
+                        <input type="email" name="_replyto" class="input1" placeholder="Your e-mail address" required autocomplete="off">
+                        <br>
+                        <textarea name="message" placeholder="Your message" row="4" required></textarea>
+                        <br>
+                        <input type="submit" class="submit" value="Send">
+                        <input type="hidden" name="_next" value="https://b-lenart.github.io/thankyou_en.html" />
+                    </form>
+               </div>
+               
+           </div>
+<!--        </div>-->
+        <footer>
+        
+        </footer>
+<!--    </div>-->
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    
+    <script src="func.js"></script>
+</body>
+</html>
