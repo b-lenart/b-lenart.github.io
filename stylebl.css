@@ -1,74 +1,13 @@
-/*
-html {
-    opacity: 0;
-    animation-name: light2;
-    animation-delay: 1s;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    background: #0e191f;
-}
-
-@keyframes light2 {
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-*/
-
 html {
     font-size: 16px;
 }
 
 body {
     margin: 0;
-/*    padding-top: 100px;*/
-/*    width: 100%;*/
-    /*height: 440vh; zmienić height na auto i background-size na cover żeby nie zostawało puste miejsce na dole strony*/
     height: auto;
     z-index: 10000;
-/*
-    background-image: url('astronomy-dark-evening-176851.jpg');
-    background-repeat: no-repeat;
-    background-position: center top;
-*/
-/*    background: none;*/
-    
-    
-    
-    
     background: url('images/smoke.jpg') no-repeat left top;
-    
-    
-    
-    
-/*    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(smoke.jpg) no-repeat left top;*/
-/*    background-size: 110vw auto;*/
-    
-    
-    
-    
     background-size: cover;
-    
-    
-    
-    
-/*    background-position: 0% 0px;*/
-/*    position: absolute;*/
-    
-/*    background-size na mobilnym - 300vw auto*/
-    
-
-    
-/*linear-gradient(to bottom right, rgba(16, 58, 101,0.5), white), */
-/*   rgba(0, 51, 102,0.5)*/
-/*    rgba(16, 58, 101,0.5)*/
-/*    rgba(9, 73, 175, 0.5)*/
-/*    height: 300vh;*/
-/*    position: absolute;*/
-/*    transition: background-position 1s;*/
 }
 
 .mobile-menu {
@@ -98,18 +37,15 @@ body {
 }
 
 .mobile-menu ul li {
-/*  border: 1px solid rgba(255, 255, 255, 0.54);*/
   width: 80%;
   height: 8vh;
   line-height: 8vh;
-/*  border-radius: 35px;*/
   margin: auto auto 3vh auto;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
 
 .mobile-menu ul a {
-/*  text-decoration: none;*/
   color: #d4d4d4;
 }
 
@@ -220,23 +156,6 @@ a {
     }
 }
 
-#whitebox {
-/*    width: 80vw;*/
-/*    height: 415vh;*/
-/*
-    height: auto;
-    background: rgba(0,0,0,0);
-    margin: 0 auto 50px auto;
-    padding-bottom: 93px;
-    position: relative;
-    border-bottom: 1px solid white;
-*/
-}
-
-#container {
-
-}
-
 .right-nav {
     position: fixed;
     top: 165px;
@@ -267,7 +186,6 @@ a {
     position: absolute;
     display: flex;
     align-items: center;
-/*    top: 4px;*/
     left: 70px;
     text-align: right;
     width: 100px;
@@ -292,20 +210,8 @@ a {
     z-index: 12000;
 }
 
-/*
-.open-lang {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 3rem;
-    transform: translateX(100%);
-}
-*/
-
 .lang {
     color: white;
-/*    font-size: 2rem;*/
     margin-bottom: 10px;
     cursor: pointer;
     position: relative;
@@ -374,22 +280,6 @@ a {
     100% {color: rgba(255,255,255,0.5);}
 }
 
-/*
-#title:hover {
-    color: rgba(255,255,255,1);;
-}
-*/
-
-#first-img {
-/*
-    background: lightsalmon;
-    height: 600px;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-*/
-}
-
 nav {
     position: relative;
     top: -33px;
@@ -413,18 +303,14 @@ li:nth-child(4) {
 
 li:nth-child(3) {
     color:#f2f2f2;
-    
-/*    color:#e6e6e6;*/
 }
 
 li:nth-child(2) {
     color: #e6e6e6;
-/*    color:#cccccc;*/
 }
 
 li:nth-child(1) {
     color: #d9d9d9;
-/*    color:#b3b3b3;*/
 }
 
 .box {
@@ -457,7 +343,6 @@ li:nth-child(1) {
 }
 
 li:hover {
-/*    color: (255,255,255,0.2);*/
     opacity: 0.5;
 }
 
@@ -478,7 +363,6 @@ li:hover .three {
     margin: 6vw auto auto auto;
     height: 85vh;
     position: relative;
-/*    top: -64px;*/
     box-shadow: -20px 20px 65px 20px #00000065;
     border-radius: 10px;
     background: linear-gradient(to bottom right, #ffffff0f 8%, rgba(255, 255, 255, 0) 28%);
@@ -490,10 +374,8 @@ li:hover .three {
     width: 200px;
     height: 200px;
     margin: 0 auto;
-/*    background: linear-gradient(to bottom right, rgba(16, 58, 101,0.5), rgba(255,255,255,0.5));*/
-        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 22%, rgba(0, 0, 0, 0.4) 80%);
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 22%, rgba(0, 0, 0, 0.4) 80%);
     background-position: center;
-/*    background-color: rgba(1, 1, 1, 0.27);*/
     display: inline-block;
     position: relative;
     bottom: 27px;
@@ -502,7 +384,6 @@ li:hover .three {
 }
 
 #desc h2 {
-/*    margin-left: -4px;*/
     font-size: 4rem;
     letter-spacing: -5px;
     color: rgba(255, 255, 255, 1);
@@ -519,8 +400,6 @@ li:hover .three {
     font-size: 1rem;
     width: 70%;
     color: rgba(255, 255, 255, 1);
-/*    font-family: 'Montserrat', sans-serif;*/
-/*font-family: 'Open Sans Condensed', sans-serif;*/
     font-family: 'Quicksand', sans-serif;
     margin-top: 0;
     font-weight: 400;
@@ -541,9 +420,7 @@ li:hover .three {
     background-color: rgba(0,0,0,0.1);
     position: relative;
     box-shadow: -20px 20px 65px 20px #00000065;
-/*    border-radius: 10px;*/
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 69%, #ffffff1f 120%);
-/*    top: 100px;*/
     margin-top: 70px;
     opacity: 0;
     transition: opacity 1s;
@@ -576,7 +453,6 @@ li:hover .three {
     bottom: -53px;
     left: 0;
     color: white;
-/*    font-size: 1rem;*/
     filter: invert(100%);
     opacity: 0.4;
 }
@@ -586,10 +462,8 @@ li:hover .three {
     color: white;
     text-align: left;
     font-family: 'Quicksand', sans-serif;
-/*    margin-top: 100px;*/
     font-weight: 400;
     letter-spacing: 1px;
-    /* display: inline-block; */
     margin: 0 auto;
     padding-top: 50px;
     padding-left: 15%;
@@ -602,22 +476,7 @@ li:hover .three {
     right: 79px;
     bottom: 0;
     opacity: 1;
-/*
-    animation-name: suit;
-    animation-delay: 2s;
-    animation-duration: 0.5s;
-*/
 }
-
-/*
-@keyframes suit {
-    from {
-        right: -79px;
-    } to {
-        right: 79px;
-    }
-}
-*/
 
 .titles {
     font-size: 2.5rem;
@@ -643,25 +502,19 @@ li:hover .three {
 .title3 {
     top: 33px;
     left: 184px;
-/*    float: left;*/
 }
 
 .title4 {
     top: -48px;
     left: 25px;
-/*    float: left;*/
 }
 
 #projects {
-/*    width: 100%;*/
     height: 85vh;
     width: 80vw;
     margin: 0 auto;
     position: relative;
-/*    margin-top: 64px;*/
-/*    box-shadow: -20px 20px 65px 20px #00000065;*/
     border-radius: 10px;
-/*    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 69%, #ffffff08 90%);*/
     display: flex;
     align-items: center;
     right: 100%;
@@ -673,7 +526,6 @@ li:hover .three {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-/*    box-shadow: -20px 20px 65px 20px #00000065;*/
 }
 
 .left, .right {
@@ -760,22 +612,12 @@ li:hover .three {
     margin: 0 auto 30px auto;
     min-height: 10vh;
     position: relative;
-/*    margin-top: 64px;*/
-/*    box-shadow: -20px 20px 65px 20px #00000065;*/
     border-radius: 10px;
-/*    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 69%, #ffffff0d 90%);*/
     display: flex;
     justify-content: center;
     align-items: center;
     right: 100%;
 }
-
-/*
-#technologies::after {
-    content: attr(data-tech);
-    position: absolute;
-}
-*/
 
 .tech-title {
     position: absolute;
@@ -792,9 +634,6 @@ li:hover .three {
 }
 
 .tech {
-/*    width: 9%;*/
-/*    height: 7vw;*/
-/*    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.16) 0%, #ffffff0d 58%);*/
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -868,25 +707,7 @@ li:hover .three {
     opacity: 0.7;
 }
 
-/*
-.tech:hover {
-    animation-name: shine;
-    animation-duration: 2s;
-}
-
-@keyframes shine {
-    0% {
-        opacity: 0.2;
-    }
-    
-    100% {
-        opacity: 1;
-    }
-}
-*/
-
 #contact {
-/*    width: 100%;*/
     width: 80vw;
     margin: 100px auto 50px auto;
     height: 90vh;
@@ -895,11 +716,8 @@ li:hover .three {
     box-shadow: -20px 20px 65px 20px #00000065;
     border-radius: 10px;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 69%, #ffffff1f 120%);
-/*    right: 100%;*/
     margin-top: 105px;
     display: flex;
-/*    right: 110%;*/
-/*    right: 0px;*/
     opacity: 0;
     transition: opacity 2s;
 }
@@ -910,7 +728,6 @@ li:hover .three {
     padding-top: 50px;
     width: 35%;
     box-sizing: border-box;
-/*    background: rgba(23, 30, 41, 0.42);*/
     text-align: center;
     position: relative;
     border-bottom-left-radius: 10px;
@@ -950,13 +767,11 @@ li:hover .three {
     box-sizing: border-box;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-/*    background: rgba(0, 0, 0, 0.88);*/
     background: url(images/smoke.jpg);
     background-position: -285px 0px;
 }
 
 form {
-/*    margin-top: 65px;*/
     padding-left: 40px;
 }
 
@@ -989,7 +804,6 @@ textarea {
     width: 40%;
     height: 40px;
     background: transparent;
-/*    border: none;*/
     border: 1px solid white;
     outline: none;
     padding: 0;
@@ -1017,7 +831,6 @@ textarea {
     opacity: 1;
     width: 30%;
     opacity: 0.7;
-/*    height: 80%;*/
     max-height: 75%;
 }
 
@@ -1186,11 +999,9 @@ textarea {
         top: -51px;
     }
     
-/*
-    .title2 {
-        top: -84px;
+    .r-navs:hover::before {
+        left: -177px;
     }
-*/
     
     .title3 {
         top: 63px;
@@ -1214,7 +1025,6 @@ textarea {
     }
     
     #desc .triangle-img {
-/*        bottom: -114px;*/
         width: 603px;
     }
     
@@ -1240,7 +1050,6 @@ textarea {
     
     .name {
         padding-left: 8%;
-/*        margin-top: 20%;*/
         margin-left: 0;
     }
     
@@ -1250,10 +1059,6 @@ textarea {
     
     #desc .triangle-img {
         right: -10px;
-    }
-    
-    #whitebox {
-/*        height: 392vh;*/
     }
     
     .project-link {
@@ -1329,14 +1134,6 @@ textarea {
 
 @media (max-width: 768px) {
     body {
-/*
-        overflow-x: hidden;
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(images/smoke.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-attachment: fixed;
-*/
         overflow-x: hidden;
         background: none;
     }
@@ -1356,19 +1153,6 @@ textarea {
     nav ul {
         display: none;
     }
-/*
-    
-    #whitebox {
-        width: 100vw;
-        border-bottom: none;
-    }
-*/
-    
-/*
-    .languages {
-        display: none;
-    }
-*/
     
     .right-nav {
         display: none;
@@ -1401,10 +1185,7 @@ textarea {
     }
     
     #desc h5 {
-/*
-        width: 67%;
-        letter-spacing: 6px;
-*/      margin-left: 7%;
+        margin-left: 7%;
         width: 80%;
         letter-spacing: 4px;
     }
@@ -1413,10 +1194,6 @@ textarea {
         font-size: 3rem;
         margin-left: 7%;
         margin-bottom: 22px;
-    }
-    
-    #desc img {
-/*        display: none;*/
     }
     
     .slider {
@@ -1432,7 +1209,6 @@ textarea {
     #aboutme {
         box-shadow: none;
         background: none;
-/*        height: 70vh;*/
         height: auto;
     }
     
@@ -1447,8 +1223,6 @@ textarea {
     
     .contact-form {
         padding: 20px;
-/*        border-bottom-right-radius: 0;*/
-/*        border-top-right-radius: 0;*/
         background: rgba(0, 0, 0, 0.65);
     }
     
@@ -1517,29 +1291,16 @@ textarea {
     .contact-info {
         padding: 20px;
         text-align: center;
-/*        border-bottom-left-radius: 0;*/
-/*        border-top-left-radius: 0;*/
         display: flex;
         flex-direction: column;
-        /* align-items: center; */
         justify-content: center;
         border-top: 4px solid rgba(0, 0, 0, 0.9);
     }
     
-/*
-    .mobile-menu {
-        display: block;
-    }
-*/
-    
     .menu-button {
         display: block;
     }
-    
-    .slide {
-/*        background: none;*/
-    }
-    
+
     .contact-info h2 {
         font-size: 1.1rem;
         margin-top: 0;
@@ -1559,7 +1320,6 @@ textarea {
     .signature {
         bottom: 0;
         left: 50%;
-        /* right: 50%; */
         transform: translate(-28%, 69%);
         z-index: 100;
         opacity: 0.5;
@@ -1569,19 +1329,12 @@ textarea {
         padding-left: 0;
     }
     
-    #desc .triangle-img {
-/*        transform: rotate(25deg);*/
-    }
-    
     .sub-img {
         position: static;
-        /* right: 7%; */
-        /* bottom: 10%; */
         opacity: 1;
         display: block;
         width: 75%;
         opacity: 0.7;
-        /* height: 80%; */
         margin: 45px auto auto auto;
     }
     

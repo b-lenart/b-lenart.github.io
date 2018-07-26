@@ -47,21 +47,10 @@ $(window).scroll(function() {
     var deviceHeight = window.innerHeight;
     
     var desc = $('#desc');
-//    console.log(desc.scrollTop());
     console.log("height:" + deviceHeight);
     
     const triangle = document.querySelector(".triangle-img");
     triangle.style.transform = "rotate(" + scroll_top/40 +"deg)";
-    
-    
-    
-//    console.log("dist: " + distanceAbout);
-//    
-//        console.log("distance: " + distance);
-//        console.log("offset().top: " + elementOffset);
-//        console.log("scrollTop: " + scroll_top);
-    
-    
     
     if(scroll_top>deviceHeight*0.2) {
         var about = document.querySelector('#aboutme');
@@ -96,7 +85,6 @@ $(window).scroll(function() {
     if(distance1>(-1*(deviceHeight/2)+100)) {
         icon1.style.fontSize="1.8rem";
         icon1.style.opacity=1;
-        //document.getElementById('container').style.background="red";
     } else {
         icon1.style.fontSize="1.4rem";
         icon1.style.opacity=0.5;
@@ -183,8 +171,6 @@ $(window).scroll(function() {
     console.log("contact: " + distance5);
     
     if(distance5<deviceHeight*0.5) {
-//        contact.animate({left: 0}, 500, "swing");
-//        contact.style.opacity=1;
         document.getElementById("contact").style.opacity=0.9;
     }
     
@@ -216,9 +202,3 @@ document.addEventListener('scroll', function() {
     mobileMenu.classList.remove("mobile-animation");
     mobileMenu.classList.add("mobile-animation-up");
     });
-    
-
-//document.getElementById('right-nav-1').addEventListener("mouseover", function() {
-//    document.getElementById('right-nav-1').style.background="red";
-//    document.getElementById('right-nav-1').style.color="red";
-//});
