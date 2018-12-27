@@ -5,10 +5,14 @@ let ball = document.getElementById("ball")
 function moveMe(e) {
     let alfa = e.alpha;
     let beta = e.beta;
-    // let gamma = e.gamma;
+    let gamma = e.gamma;
 
-    let distA = (alfa * 4.5) + 100;
-    let distB = ((beta - 90) * 4.5) + 100;
+    // let distA = (alfa * 4.5) + 100;
+    // let distB = ((beta - 90) * 4.5) + 100;
+
+    let distA = (gamma * 4.5) + 100;
+    let distB = (beta * 4.5) + 100;
+    // let distB = ((beta - 90) * 4.5) + 100;
 
     ball.style.left = distA + "px";
     console.log('left: ' + ball.style.left);
