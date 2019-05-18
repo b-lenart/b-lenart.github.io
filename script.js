@@ -184,9 +184,18 @@ function dragEnd() {
     this.className = 'single-task';
 }
 
+const whiteBar = document.querySelector('.white-mobile-bar');
+whiteBar.addEventListener('dragover', whiteBarOver);
+function whiteBarOver(e) {
+    e.preventDefault();
+    // console.log('over');
+    window.scrollTo(500, 1000);
+}
+
 function dragOver(e) {
     e.preventDefault();
     // console.log('over');
+
 }
 
 function dragEnter(e) {
