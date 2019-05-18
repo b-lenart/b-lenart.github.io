@@ -189,20 +189,26 @@ function dragEnd() {
 
 let scrollInterval;
 const whiteBar = document.querySelector('.white-mobile-bar');
-whiteBar.addEventListener('dragenter', whiteBarEnter);
+whiteBar.addEventListener('dragover', whiteBarOver);
 whiteBar.addEventListener('dragleave', whiteBarLeave);
 
-function whiteBarEnter(e) {
+function whiteBarOver(e) {
     e.preventDefault();
     // console.log('over');
     // window.scrollTo(500, 1000);
-    let scrollNum = window.scrollY;
-    let scrollInterval = setInterval(function () {
-        window.scrollBy(0, 1)
-    }, 50)
+    // let scrollNum = window.scrollY;
+    // let scrollInterval = setInterval(function () {
+    //     window.scrollBy(0, 1)
+    // }, 50);
+
+    console.log('whitebarover');
+    whiteBar.style.background = "red";
+    whiteBar.innerHTML += "i";
+    window.scrollBy(0, 1);
 }
 function whiteBarLeave(e) {
-    clearInterval(scrollInterval);
+    // clearInterval(scrollInterval);
+    whiteBar.style.background = "white";
 }
 
 
