@@ -191,12 +191,14 @@ let scrollInterval;
 const whiteBar = document.querySelector('.white-mobile-bar');
 whiteBar.addEventListener('dragenter', whiteBarEnter);
 whiteBar.addEventListener('dragleave', whiteBarLeave);
+
 function whiteBarEnter(e) {
     e.preventDefault();
     // console.log('over');
     // window.scrollTo(500, 1000);
+    let scrollNum = window.scrollY;
     let scrollInterval = setInterval(function () {
-        window.scrollBy(0, window.scrollY++)
+        window.scrollBy(0, scrollNum++)
     }, 50)
 }
 function whiteBarLeave(e) {
