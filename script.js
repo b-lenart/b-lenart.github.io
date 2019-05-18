@@ -201,14 +201,9 @@ function whiteBarOver(e) {
     //     window.scrollBy(0, 1)
     // }, 50);
 
-    console.log('whitebarover');
-    whiteBar.style.background = "red";
-    whiteBar.innerHTML += "i";
-    window.scrollBy(0, 1);
+    window.scrollBy(0, 5);
 }
 function whiteBarLeave(e) {
-    // clearInterval(scrollInterval);
-    whiteBar.style.background = "white";
     window.scrollBy(0, 0);
 }
 
