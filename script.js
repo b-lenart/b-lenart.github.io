@@ -198,7 +198,7 @@ function whiteBarEnter(e) {
     // window.scrollTo(500, 1000);
     let scrollNum = window.scrollY;
     let scrollInterval = setInterval(function () {
-        window.scrollBy(0, scrollNum++)
+        window.scrollBy(0, 1)
     }, 50)
 }
 function whiteBarLeave(e) {
