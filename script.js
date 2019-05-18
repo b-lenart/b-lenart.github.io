@@ -209,6 +209,7 @@ function whiteBarOver(e) {
 function whiteBarLeave(e) {
     // clearInterval(scrollInterval);
     whiteBar.style.background = "white";
+    window.scrollBy(0, 0);
 }
 
 
