@@ -1,0 +1,207 @@
+/* @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400&display=swap&subset=latin-ext'); */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400|Yanone+Kaffeesatz:300,400&display=swap&subset=latin-ext');
+
+body {
+    /* font-family: 'Yanone Kaffeesatz', sans-serif; */
+    font-family: 'Quicksand', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #222;
+    overflow-x: hidden;
+}
+
+.task-pool-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vmax;
+}
+
+#task-pool {
+    height: 15vmax;
+    overflow-y: auto;
+    padding: 2vmax;
+}
+
+.users-tasks-container {
+    display: flex;
+    justify-content: center;
+}
+
+#user2-cont {
+    top: 1.5vmax;
+}
+
+#user3-cont {
+    top: 3vmax;
+}
+
+#user1-cont::after, #user2-cont::after, #user3-cont::after {
+    position: absolute;
+    bottom: -8px;
+    right: 7px;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+#user2-cont::after {
+    content: '2';
+}
+
+#user1-cont::after {
+    content: '1';
+}
+
+#user3-cont::after {
+    content: '3';
+}
+
+#user1-cont::before, #user2-cont::before, #user3-cont::before {
+    content: '';
+    position: absolute;
+    width: 11vmax;
+    height: 11vmax;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    font-size: 7rem;
+    font-weight: 700;
+    color: #7b7b7b;
+    background: lightgrey;
+    transform: translate(30%, 30%);
+}
+
+#user2-cont::before {
+    background: #325D79;
+}
+
+#user1-cont::before {
+    background: #FF9800;
+}
+
+#user3-cont::before {
+    background: #555;
+}
+
+.single-task {
+    /* background-image: url("camera.jpg");
+    background-position: center;
+    background-size: cover; */
+    background: rgba(241, 241, 241, 0.692);
+    position: relative;
+    z-index: 1000;
+    /* height: 30px; */
+    width: 100%;
+    /* top: 5px;
+    left: 5px; */
+    cursor: pointer;
+    box-sizing: border-box;
+    /* border: 1px solid yellow; */
+    padding: 0.7vmax;
+    transition: 0.5s all;
+    /* box-shadow: -2px 3px 3px rgba(132, 132, 132, 0.37); */
+    box-shadow: -8px 7px 10px rgba(132, 132, 132, 0.35);
+    margin-top: 10px;
+    border-left: 5px solid #FF9800;
+    font-weight: 700;
+}
+
+#user2-cont .single-task {
+    background: #325D79;
+    border-left: 5px solid rgb(209, 209, 209);
+    color: #fff;
+}
+
+#user1-cont .single-task {
+    background: #FF9800;
+    border-left: 5px solid #555;
+    color: #fff;
+}
+
+#user3-cont .single-task {
+    background: #555;
+    color: #fff;
+}
+
+.hold {
+    /* border: solid #ccc 4px;
+    opacity: 1; */
+    /* border: 1px solid orange;
+    padding-left: 10px; */
+}
+
+.task-container {
+    /* display: inline-block; */
+    min-height: 15vmax;
+    width: 15vmax;
+    margin: 10px;
+    position: relative;
+    /* border: 3px salmon solid; */
+    background-color: white;
+    box-shadow: -2px 3px 10px rgba(132, 132, 132, 0.35);
+    transition: 0.5s all;
+    padding: 1vmax;
+    overflow: hidden;
+}
+
+.user-container {
+    padding: 1vmax 3vmax 3vmax 1vmax;
+}
+
+.hovered {
+    /* background: #f4f4f4; */
+    /* box-shadow: -6px 6px 20px rgba(132, 132, 132, 0.35); */
+    box-shadow: -6px 6px 20px rgba(132, 132, 132, 0.45);
+    /* border-style: dashed; */
+}
+
+.invisible {
+    display: none;
+}
+
+.top-color-bar {
+    transform-origin: top left;
+    background: #325D79;
+    height: 30vh;
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    width: 120vw;
+    transform: rotate(5deg);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media only screen and (max-width: 768px) {
+  #task-pool {
+      height: auto;
+  }
+  .task-container {
+      min-height: 85vw;
+      width: 85vw;
+  }
+  .users-tasks-container {
+      flex-wrap: wrap;
+  }
+  #user2-cont, #user3-cont {
+      top: 0;
+  }
+  #user1-cont::before, #user2-cont::before, #user3-cont::before {
+      width: 30vmax;
+      height: 30vmax;
+  }
+}
