@@ -9,7 +9,7 @@ const user3cont = document.querySelector('#user3-cont');
 const addTask = document.querySelector('.add-task');
 const newTaskValue = document.querySelector('.new-task-value');
 
-//initial task container localstorage info
+//initial task container data
 
 let mainContainer = {
     tasks: [
@@ -91,12 +91,16 @@ let mainContainer = {
     ]
 }
 
-// localStorage.setItem('taskAppData', '');
+// set local storage data to mainContainer object at first, 
+// then use localStorage data if it's provided
+
 if (localStorage.getItem('activatedTaskApp') !== 'activated') {
     localStorage.setItem('taskAppData', JSON.stringify(mainContainer));
 }
 
 let storageData = JSON.parse(localStorage.getItem('taskAppData'));
+
+// add new task
 
 addTask.addEventListener('click', () => {
     storageData.tasks.push({
@@ -105,16 +109,14 @@ addTask.addEventListener('click', () => {
         container: 'task-pool'
     })
     localStorage.setItem('taskAppData', JSON.stringify(storageData));
-    console.log('storage data: ' + storageData);
     localStorage.setItem('activatedTaskApp', 'activated');
     newTaskValue.value = '';
     createFromStorage();
     mainTaskCont.scrollTop = mainTaskCont.scrollHeight;
 })
 
-// mainContainer.tasks = storageData;
-// if (localStorage.getItem('activatedTaskApp') == 'activated') {
-// if (storageData !== '') {
+// create elements in their containers based on localStorage data
+
 function createFromStorage() {
     mainTaskCont.innerHTML = '';
     user1cont.innerHTML = '';
@@ -124,9 +126,9 @@ function createFromStorage() {
         let taskCont = document.createElement('div');
         taskCont.classList.add('single-task');
         taskCont.setAttribute('draggable', 'true');
+
         taskCont.setAttribute('id', storageData.tasks[task].id);
         taskCont.innerHTML = storageData.tasks[task].text;
-        // storageData.tasks[task].container.appendChild(taskCont);
         document.querySelector(`#${storageData.tasks[task].container}`).appendChild(taskCont);
 
         taskCont.addEventListener('dragstart', dragStart);
@@ -135,7 +137,7 @@ function createFromStorage() {
 }
 createFromStorage();
 
-// }
+// task event listeners
 
 for (const task of allTasks) {
     task.addEventListener('dragstart', dragStart);
@@ -143,20 +145,13 @@ for (const task of allTasks) {
 }
 
 for (let i = 0; i < allTasks.length; i++) {
-    allTasks[i].setAttribute('id', 'task' + i);
+    allTasks[i].setAttribute('id', `task${i}`);
 }
-
-// task listeners
-
-// task.addEventListener('dragstart', dragStart);
-// task.addEventListener('dragend', dragEnd);
 
 for (const task of allTasks) {
     task.addEventListener('dragstart', dragStart);
     task.addEventListener('dragend', dragEnd);
 }
-
-//Loop through emties and call drag events
 
 for (const cont of userContainers) {
     cont.addEventListener('dragover', dragOver);
@@ -165,96 +160,74 @@ for (const cont of userContainers) {
     cont.addEventListener('drop', onDrop);
 }
 
-for (const task of allTasks) {
-    task.addEventListener('dragstart', dragStart);
-    task.addEventListener('dragend', dragEnd);
-}
+// drag and drop functions
 
-//Drag Functions
 function dragStart(e) {
-    // this.classList.add('hold');
     e.dataTransfer.setData('text/plain', e.target.id);
-    console.log('dragStart e.target: ' + e.target);
     this.classList.add('hold');
     setTimeout(() => this.classList.add('invisible'), 0);
-    // setTimeout(function () { this.classList.add('invisible') }, 0);
 }
 
 function dragEnd() {
     this.className = 'single-task';
 }
 
-
-
-
-let scrollInterval;
 const whiteBar = document.querySelector('.white-mobile-bar');
+const topScrollMobileBar = document.querySelector('.top-scroll-mobile-bar');
 whiteBar.addEventListener('dragover', whiteBarOver);
 whiteBar.addEventListener('dragleave', whiteBarLeave);
 
+topScrollMobileBar.addEventListener('dragover', topScrollMobileBarOver);
+topScrollMobileBar.addEventListener('dragleave', topScrollMobileBarLeave);
+
+// allow scroll on mobile devices when dragging elements
+
 function whiteBarOver(e) {
     e.preventDefault();
-    // console.log('over');
-    // window.scrollTo(500, 1000);
-    // let scrollNum = window.scrollY;
-    // let scrollInterval = setInterval(function () {
-    //     window.scrollBy(0, 1)
-    // }, 50);
-
     window.scrollBy(0, 5);
 }
 function whiteBarLeave(e) {
     window.scrollBy(0, 0);
 }
-
-
-
-
+function topScrollMobileBarOver(e) {
+    e.preventDefault();
+    window.scrollBy(0, -5);
+}
+function topScrollMobileBarLeave(e) {
+    window.scrollBy(0, 0);
+}
 
 function dragOver(e) {
     e.preventDefault();
-    // console.log('over');
-
 }
 
 function dragEnter(e) {
     e.preventDefault();
     this.classList.add('hovered');
-    console.log('enter');
 }
 
 function dragLeave(e) {
-    // console.log('dragLeave e.target: ' + e.target.innerHTML);
     this.className = 'task-container';
-    console.log('leave');
 }
 
+// set localStorage data on element drop
+// and append element to container
+
 function onDrop(e) {
-    let data = e.dataTransfer.getData("text/plain");
-    // e.target.textContent = data;
+    let data = e.dataTransfer.getData('text/plain');
     e.preventDefault();
-    // console.log('dragDrop e.target: ' + e.target);
-    // this.className = 'task-container';
     this.appendChild(document.getElementById(data));
     this.classList.remove('hovered');
-    // mainContainer.tasks[task].id
     for (let i = 0; i < storageData.tasks.length; i++) {
         if (storageData.tasks[i].id == data) {
-            console.log('num of task - 1: ' + i);
             storageData.tasks[i].container = this.id;
-            console.log('storageData from onDrop: ' + storageData);
-            console.log(this.id);
         }
     }
     localStorage.setItem('activatedTaskApp', 'activated');
     localStorage.setItem('taskAppData', JSON.stringify(storageData));
-    // console.log('drop');
-    console.log('onDrop-this-id:', this.id);
-    console.log('onDrop-data:', data);
 }
 
-
-//clear storage
+//clear storage and reload
 
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', () => {
