@@ -175,7 +175,7 @@ body {
     margin: 10px;
     position: relative;
     /* border: 3px salmon solid; */
-    background-color: white;
+    background-color: #fff;
     box-shadow: -2px 3px 10px rgba(132, 132, 132, 0.35);
     transition: 0.5s all;
     padding: 1vmax;
@@ -336,8 +336,10 @@ body {
     height: 10vh;
     background: #fff;
     display: none;
+    /* display: block; */
     bottom: 0;
     left: 0;
+    z-index: 1000;
 }
 
 @media only screen and (max-width: 768px) {
