@@ -184,13 +184,28 @@ function dragEnd() {
     this.className = 'single-task';
 }
 
+
+
+
+let scrollInterval;
 const whiteBar = document.querySelector('.white-mobile-bar');
-whiteBar.addEventListener('dragover', whiteBarOver);
-function whiteBarOver(e) {
+whiteBar.addEventListener('dragenter', whiteBarEnter);
+whiteBar.addEventListener('dragleave', whiteBarLeave);
+function whiteBarEnter(e) {
     e.preventDefault();
     // console.log('over');
-    window.scrollTo(500, 1000);
+    // window.scrollTo(500, 1000);
+    let scrollInterval = setInterval(function () {
+        window.scrollBy(0, window.scrollY++)
+    }, 50)
 }
+function whiteBarLeave(e) {
+    clearInterval(scrollInterval);
+}
+
+
+
+
 
 function dragOver(e) {
     e.preventDefault();
