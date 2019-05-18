@@ -1,10 +1,11 @@
 /* @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400&display=swap&subset=latin-ext'); */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400|Yanone+Kaffeesatz:300,400&display=swap&subset=latin-ext');
+/* @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400|Yanone+Kaffeesatz:300,400&display=swap&subset=latin-ext'); */
+@import url('https://fonts.googleapis.com/css?family=Abel|Nanum+Gothic|Open+Sans+Condensed:300|Quicksand:300,400|Yanone+Kaffeesatz:200,300,400&display=swap&subset=latin-ext');
 
 body {
     /* font-family: 'Yanone Kaffeesatz', sans-serif; */
     font-family: 'Quicksand', sans-serif;
-    padding: 0;
+    padding: 2vmax 0 50px 0;
     margin: 0;
     color: #222;
     overflow-x: hidden;
@@ -13,27 +14,63 @@ body {
 .task-pool-container {
     display: flex;
     justify-content: center;
-    margin-top: 2vmax;
+    /* margin-top: 2vmax; */
 }
 
 #task-pool {
-    height: 15vmax;
+    height: 13vmax;
     overflow-y: auto;
     padding: 2vmax;
+    scroll-behavior: smooth;
 }
+
+.task-pool-wrapper {
+    z-index: 1000;
+}
+
+.task-pool-wrapper .user-title {
+    color: #fff;
+}
+
+/* #task-pool::after {
+    content: 'Tasks';
+    position: absolute;
+    bottom: -8px;
+    right: 7px;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+} */
 
 .users-tasks-container {
     display: flex;
     justify-content: center;
 }
 
-#user2-cont {
+.user-wrapper {
+    position: relative;
+}
+
+.user-wrapper:nth-of-type(1) {
+    top: 1.5vmax;
+}
+
+.user-wrapper:nth-of-type(3) {
+    top: 3vmax;
+}
+
+.user-title {
+    text-align: center;
+    margin: 0 0 5px 0;
+}
+
+/* #user2-cont {
     top: 1.5vmax;
 }
 
 #user3-cont {
     top: 3vmax;
-}
+} */
 
 #user1-cont::after, #user2-cont::after, #user3-cont::after {
     position: absolute;
@@ -104,6 +141,7 @@ body {
     margin-top: 10px;
     border-left: 5px solid #FF9800;
     font-weight: 700;
+    word-break: break-word;
 }
 
 #user2-cont .single-task {
@@ -132,8 +170,8 @@ body {
 
 .task-container {
     /* display: inline-block; */
-    min-height: 15vmax;
-    width: 15vmax;
+    min-height: 13vmax;
+    width: 13vmax;
     margin: 10px;
     position: relative;
     /* border: 3px salmon solid; */
@@ -142,11 +180,12 @@ body {
     transition: 0.5s all;
     padding: 1vmax;
     overflow: hidden;
-}
-
-.user-container {
     padding: 1vmax 3vmax 3vmax 1vmax;
 }
+
+/* .user-container {
+    padding: 1vmax 3vmax 3vmax 1vmax;
+} */
 
 .hovered {
     /* background: #f4f4f4; */
@@ -160,10 +199,10 @@ body {
 }
 
 .top-color-bar {
-    transform-origin: top left;
+    transform-origin: bottom left;
     background: #325D79;
     height: 30vh;
-    position: absolute;
+    position: fixed;
     top: -30vh;
     left: 0;
     width: 120vw;
@@ -186,9 +225,137 @@ body {
   background: #555; 
 }
 
+.app-title-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding-right: 2vmax;
+}
+
+.app-title-bar h1, .app-title-bar h2 {
+    font-weight: 200;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: #fff;
+}
+
+.app-title-bar h1 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.app-title-bar h2 {
+    margin-top: 1vmax;
+    font-size: 1.2rem;
+}
+
+.clear-btn {
+    background: #ff9800;
+    border: 3px solid transparent;
+    color: #fff;
+    width: 4vmax;
+    height: 4vmax;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 1vmax;
+    left: 1vmax;
+    transition: 0.5s all;
+    cursor: pointer;
+    box-shadow: -2px 2px 5px rgba(76, 76, 76, 0.5);
+    font-size: 1.2rem;
+    z-index: 1000;
+    outline: none;
+}
+
+.clear-btn::before {
+    content: 'clear storage';
+    position: absolute;
+    top: 50%;
+    left: 2vmax;
+    font-size: 0.8rem;
+    color: #555;
+    transition: 0.5s all;
+    z-index: -1;
+    width: 11vmax;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.clear-btn:hover {
+    background: #555;
+    border: 3px solid #ff9800;
+    box-shadow: -4px 4px 10px rgba(76, 76, 76, 0.5);
+}
+
+.clear-btn:hover::before {
+    opacity: 1;
+}
+
+.add-task-wrapper {
+    width: 15vmax;
+    box-sizing: border-box;
+    display: flex;
+    height: 2vmax;
+    /* margin-left: 2vmax; */
+    position: fixed;
+    bottom: 1vmax;
+    left: 1vmax;
+}
+
+.add-task-wrapper .new-task-value {
+    width: 60%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #555;
+    outline: none;
+    padding-left: 5px;
+}
+
+.add-task-wrapper .add-task {
+    width: 40%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #555;
+    color: #fff;
+    border: none;
+    transition: 0.5s all;
+    cursor: pointer;
+    border: 1px solid #555;
+}
+
+.add-task-wrapper .add-task:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+.white-mobile-bar {
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    background: #fff;
+    display: none;
+    bottom: 0;
+    left: 0;
+}
+
 @media only screen and (max-width: 768px) {
+  body {
+      padding: 17vmax 0 50px 0; 
+  }
+  .app-title-bar {
+      position: absolute;
+  }
+  .app-title-bar h1 {
+      font-size: 1.2rem;
+  }
+  .app-title-bar h2 {
+      margin-top: 2vmax;
+      font-size: 1rem;
+  }
   #task-pool {
-      height: auto;
+      height: 85vw;
   }
   .task-container {
       min-height: 85vw;
@@ -203,5 +370,45 @@ body {
   #user1-cont::before, #user2-cont::before, #user3-cont::before {
       width: 30vmax;
       height: 30vmax;
+  }
+  .top-color-bar {
+      transform: rotate(15deg);
+      height: 47vh;
+      top: -23vh;
+      left: -15vw;
+      width: 130vw;
+  }
+  .white-mobile-bar {
+      display: block;
+  }
+  .add-task-wrapper {
+      width: 73vw;
+      height: 32px;
+      bottom: 5px;
+      left: 5px;
+      z-index: 100;
+  }
+  .clear-btn {
+      bottom: 5px;
+      position: fixed;
+      top: unset;
+      right: 15px;
+      left: unset;
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+  }
+  .single-task {
+      padding: 7px;
+  }
+  .user-wrapper:nth-of-type(1) {
+      top: 0;
+  }
+  .user-wrapper:nth-of-type(3) {
+      top: 0;
+  }
+  .user-title {
+    color: #98aaab;
+    font-weight: 700;
   }
 }

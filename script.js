@@ -107,7 +107,9 @@ addTask.addEventListener('click', () => {
     localStorage.setItem('taskAppData', JSON.stringify(storageData));
     console.log('storage data: ' + storageData);
     localStorage.setItem('activatedTaskApp', 'activated');
+    newTaskValue.value = '';
     createFromStorage();
+    mainTaskCont.scrollTop = mainTaskCont.scrollHeight;
 })
 
 // mainContainer.tasks = storageData;

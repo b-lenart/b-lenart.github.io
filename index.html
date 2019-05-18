@@ -4,39 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title>DragNDrop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="top-color-bar"></div>
+    <div class="app-title-bar">
+        <h1>Software Factory - Coding Excercise</h1>
+        <h2>Bartosz Lenart</h2>
+    </div>
     <div class="task-pool-container">
-        <div id="task-pool" class="task-container">
-            <!-- <div class="single-task" draggable="true">Task1</div>
-            <div class="single-task" draggable="true">Task2</div>
-            <div class="single-task" draggable="true">Task3</div>
-            <div class="single-task" draggable="true">Task4</div>
-            <div class="single-task" draggable="true">Task5</div>
-            <div class="single-task" draggable="true">Task6</div>
-            <div class="single-task" draggable="true">Task7</div>
-            <div class="single-task" draggable="true">Task8</div>
-            <div class="single-task" draggable="true">Task9</div>
-            <div class="single-task" draggable="true">Task10</div>
-            <div class="single-task" draggable="true">Task11</div>
-            <div class="single-task" draggable="true">Task12</div>
-            <div class="single-task" draggable="true">Task13</div>
-            <div class="single-task" draggable="true">Task14</div>
-            <div class="single-task" draggable="true">Task15</div> -->
+        <div class="task-pool-wrapper">
+            <p class="user-title">Tasks</p>
+            <div id="task-pool" class="task-container">
+                <!-- <div class="single-task" draggable="true">Task1</div>
+                <div class="single-task" draggable="true">Task2</div>
+                <div class="single-task" draggable="true">Task3</div>
+                <div class="single-task" draggable="true">Task4</div>
+                <div class="single-task" draggable="true">Task5</div>
+                <div class="single-task" draggable="true">Task6</div>
+                <div class="single-task" draggable="true">Task7</div>
+                <div class="single-task" draggable="true">Task8</div>
+                <div class="single-task" draggable="true">Task9</div>
+                <div class="single-task" draggable="true">Task10</div>
+                <div class="single-task" draggable="true">Task11</div>
+                <div class="single-task" draggable="true">Task12</div>
+                <div class="single-task" draggable="true">Task13</div>
+                <div class="single-task" draggable="true">Task14</div>
+                <div class="single-task" draggable="true">Task15</div> -->
+            </div>
         </div>
     </div>
     <div class="users-tasks-container">
-        <div id="user2-cont" class="user-container task-container user-cont-moved"></div>
-        <div id="user1-cont" class="user-container task-container"></div>
-        <div id="user3-cont" class="user-container task-container user-cont-moved"></div>
+        <div class="user-wrapper">
+            <p class="user-title">User 2</p>
+            <div id="user2-cont" class="user-container task-container user-cont-moved"></div>
+        </div>
+        <div class="user-wrapper">
+            <p class="user-title">User 1</p>
+            <div id="user1-cont" class="user-container task-container"></div>
+        </div>
+        <div class="user-wrapper">
+            <p class="user-title">User 3</p>
+            <div id="user3-cont" class="user-container task-container user-cont-moved"></div>
+        </div>
     </div>
     
-    <button class="clear-btn">clear storage</button>
-    <input class="new-task-value" type="text">
-    <button class="add-task">add</button>
+    <button class="clear-btn"><i class="far fa-trash-alt"></i></button>
+    <div class="add-task-wrapper">
+        <input class="new-task-value" type="text" placeholder="Enter Task Name">
+        <button class="add-task">add task</button>
+    </div>
+    <div class="white-mobile-bar"></div>
 
 <script src="script.js"></script>
 </body>
